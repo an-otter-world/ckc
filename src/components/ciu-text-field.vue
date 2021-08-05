@@ -42,6 +42,10 @@ export default defineComponent({
 }
 
 .ciu-text-field > input {
+  color: inherit;
+}
+
+.ciu-text-field > input {
   background: transparent;
   border-bottom: 1px var(--ciu-primary-dark) solid;
   border-left: none;

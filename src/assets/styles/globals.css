@@ -6,9 +6,11 @@
 */
 
 body {
+  background: var(--ciu-background);
+  color: var(--ciu-on-background);
+  font: var(--ciu-font);
   height: 100vh;
   margin: 0px;
-  font: var(--ciu-font);
 }
 
 a {
