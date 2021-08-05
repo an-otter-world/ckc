@@ -22,7 +22,6 @@ export default defineComponent({
     },
     emits: [
         'update:modelValue',
-        'test'
     ],
     setup(_, {emit}) {
       function valueChanged(event: Event) {
