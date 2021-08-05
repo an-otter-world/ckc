@@ -1,5 +1,5 @@
 <template lang="pug">
-div(class="ciu-primary ciu-navbar" v-bind:class="{'ciu-small': !$mq('sm')}")
+div(class="ciu-navbar" v-bind:class="{'ciu-small': !$mq('sm'), 'ciu-primary': !secondary, 'ciu-secondary': secondary}")
   div(class="ciu-brand")
     slot(name="brand")
   div(class="ciu-menu" ref="menu")
@@ -15,9 +15,17 @@ div(class="ciu-primary ciu-navbar" v-bind:class="{'ciu-small': !$mq('sm')}")
 
 import { defineComponent } from 'vue'
 import { ref } from 'vue'
+import { toRefs } from 'vue'
 
 export default defineComponent({
-  setup() {
+  props: {
+    'secondary': {
+      type: Boolean,
+      required: false,
+    }
+  },
+  setup(props) {
+    const {secondary} = toRefs(props)
     const isOpened = ref(false);
     const html = document.documentElement
     const menu = ref<Node | null>(null)
@@ -51,6 +59,7 @@ export default defineComponent({
       close,
       isOpened,
       menu,
+      secondary,
       toggle,
     }
   },
@@ -102,7 +111,7 @@ export default defineComponent({
 }
 
 .ciu-navbar.ciu-small > .ciu-menu > .ciu-links {
-  background: var(--ciu-primary);
+  background: var(--ciu-current);
   flex-direction: column;
   left: 0;
   display: none;
@@ -132,12 +141,12 @@ export default defineComponent({
 }
 
 .ciu-navbar > .ciu-menu a:hover {
-  background-color: var(--ciu-primary-light);
+  background-color: var(--ciu-current-light);
   text-decoration: none;
 }
 
 .ciu-navbar > .ciu-menu a.router-link-active {
-  background-color: var(--ciu-primary-dark);
+  background-color: var(--ciu-current-dark);
   text-transform: uppercase;
 }
 </style>
