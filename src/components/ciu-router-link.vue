@@ -6,7 +6,6 @@ router-link(:to="to" class="ciu-router-link")
 </template>
 
 <script lang="ts">
-import { PropType } from 'vue'
 import { defineComponent } from 'vue'
 
 export default defineComponent({
