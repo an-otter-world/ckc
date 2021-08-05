@@ -111,7 +111,7 @@ export default defineComponent({
 }
 
 .ciu-navbar.ciu-small > .ciu-menu > .ciu-links {
-  background: var(--ciu-current);
+  background: var(--ciu-context);
   flex-direction: column;
   left: 0;
   display: none;
@@ -141,12 +141,12 @@ export default defineComponent({
 }
 
 .ciu-navbar > .ciu-menu a:hover {
-  background-color: var(--ciu-current-light);
+  background-color: var(--ciu-context-light);
   text-decoration: none;
 }
 
 .ciu-navbar > .ciu-menu a.router-link-active {
-  background-color: var(--ciu-current-dark);
+  background-color: var(--ciu-context-dark);
   text-transform: uppercase;
 }
 </style>

@@ -16,17 +16,17 @@
 }
 
 .ciu-primary {
-  --ciu-current-dark: var(--ciu-primary-dark);
-  --ciu-current-light: var(--ciu-primary-light);
-  --ciu-current: var(--ciu-primary);
+  --ciu-context-dark: var(--ciu-primary-dark);
+  --ciu-context-light: var(--ciu-primary-light);
+  --ciu-context: var(--ciu-primary);
   background-color: var(--ciu-primary);
   color: var(--ciu-on-primary);
 }
 
 .ciu-secondary {
-  --ciu-current-dark: var(--ciu-secondary-dark);
-  --ciu-current-light: var(--ciu-secondary-light);
-  --ciu-current: var(--ciu-secondary);
+  --ciu-context-dark: var(--ciu-secondary-dark);
+  --ciu-context-light: var(--ciu-secondary-light);
+  --ciu-context: var(--ciu-secondary);
   background-color: var(--ciu-secondary);
   color: var(--ciu-on-secondary);
 }
