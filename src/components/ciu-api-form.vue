@@ -8,15 +8,15 @@ form(class="ciu-resource-form")
 
 <script lang="ts">
 import { PropType } from 'vue';
-import { Resource } from '../core/resource'
+import { Resource } from '../services/resource'
 import { defineComponent } from 'vue'
-import { setCurrentResource } from '../core/current-resource'
+import { setCurrentResource } from '../services/current-resource'
 
 export default defineComponent({
   props: {
     'resource': {
-        required: true,
-        type: Object as PropType<Resource>
+      required: true,
+      type: Object as PropType<Resource>
     },
   },
   setup(props) {
