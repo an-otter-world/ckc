@@ -1,7 +1,9 @@
+import Vue from 'vue'
+import { App } from 'vue';
+
 import './assets/styles/_index.css'
 import './font-awesome'
 import './ckc.d.ts'
-import Vue from 'vue'
 import CApiErrors from './components/api-errors.vue'
 import CApiForm from './components/api-form.vue'
 import CApiInput from './components/api-input.vue'
@@ -16,10 +18,8 @@ import CRouterLink from './components/router-link.vue'
 import CScreenCenter from './components/screen-center.vue'
 import CSpinner from './components/spinner.vue'
 import CTextField from './components/text-field.vue'
-import { App } from 'vue';
 import { MediaQueryOptions } from './services/media-query'
-import { installResourceManager } from './services/resource-manager'
-import { installBackend } from './services/backend'
+import { installServiceManager } from './services/service-manager'
 import { mediaQuery } from './services/media-query'
 
 declare module '@vue/runtime-core' {
@@ -33,8 +33,7 @@ export interface CkcOptions {
 }
 
 export default function install<T>(app: App<T>, options?: CkcOptions) {
-    installBackend(app)
-    installResourceManager(app)
+    installServiceManager(app)
     app
       .component('CApiErrors', CApiErrors)
       .component('CApiForm', CApiForm)
@@ -60,3 +59,4 @@ export { ResourceObject } from './services/resource-object'
 export { getBackend } from './services/backend'
 export { getCurrentResource } from './services/current-resource'
 export { getResource } from './services/resource-manager'
+export { getService } from './services/service-manager'
