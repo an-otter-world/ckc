@@ -3,9 +3,9 @@ div(class="navbar" v-bind:class="{'small': !$mq('sm'), 'primary': !secondary, 's
   div(class="brand")
     slot(name="brand")
   div(class="menu" ref="menu")
-    a(href="#" v-on:click="toggle()")
+    a(href="#" @click="toggle()")
       c-icon(icon="bars")
-    div(class="links" v-on:mouseup="close()" v-bind:class="{ 'opened': isOpen }")
+    div(class="links" @mouseup="close()" v-bind:class="{ 'opened': isOpen }")
       slot
   div(class="end")
     slot(name="end")

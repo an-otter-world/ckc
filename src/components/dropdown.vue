@@ -4,11 +4,14 @@ div(class="dropdown" ref="dropdown")
     a(href="#" @click="toggle()")
       slot(name="header")
         c-icon(icon="chevron-down")
-  div(v-if="isOpen" v-on:mouseup="close()")
+  div(v-if="isOpen" @mouseup="close()")
     slot
 </template>
 
 <script lang="ts">
+// TODO : Putting @click handlers on links inside the dropdown interferes with the
+// mouseup handler and prevents the @click handler to be executed. We should investigate
+// why, as we for now plug handlers on mousedown event inside the dropdown, which is not intuitive.
 import { defineComponent } from 'vue'
 import { ref } from 'vue'
 
