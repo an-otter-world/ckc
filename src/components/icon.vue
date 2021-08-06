@@ -17,11 +17,11 @@ import { IconPrefix } from "@fortawesome/fontawesome-svg-core";
 export default defineComponent({
   props: {
     icon: {
-      type: Object as PropType<IconName>,
+      type: String as PropType<IconName>,
       required: true
     },
     type: {
-      type: Object as PropType<IconPrefix>,
+      type: String as PropType<IconPrefix>,
       default: "fas",
       required: false
     },
