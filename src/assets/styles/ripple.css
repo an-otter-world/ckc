@@ -5,17 +5,17 @@
   as published by Sam Hocevar. See the COPYING file for more details.
 */
 
-.ciu-ripple {
+.ripple {
   background-position: center;
-  transition: background-color var(--ciu-feedback-duration);
+  transition: background-color var(--feedback-duration);
 }
 
-.ciu-ripple:hover {
-  background: var(--ciu-primary-light) radial-gradient(circle, transparent 1%, var(--ciu-primary-light) 1%) center/15000%;
+.ripple:hover {
+  background: var(--primary-light) radial-gradient(circle, transparent 1%, var(--primary-light) 1%) center/15000%;
 }
 
-.ciu-ripple:active {
-  background-color: var(--ciu-primary);
+.ripple:active {
+  background-color: var(--primary);
   background-size: 100%;
   transition: background-color 0s;
 }

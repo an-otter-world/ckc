@@ -2,20 +2,20 @@ import './assets/styles/_index.css'
 import './font-awesome'
 import './ckc.d.ts'
 import Vue from 'vue'
-import CiuApiErrors from './components/ciu-api-errors.vue'
-import CiuApiForm from './components/ciu-api-form.vue'
-import CiuApiInput from './components/ciu-api-input.vue'
-import CiuButton from './components/ciu-button.vue'
-import CiuComponent from './components/ciu-component.vue'
-import CiuDropdown from './components/ciu-dropdown.vue'
-import CiuIcon from './components/ciu-icon.vue'
-import CiuInput from './components/ciu-input.vue'
-import CiuLoadingOverlay from './components/ciu-loading-overlay.vue'
-import CiuNavbar from './components/ciu-navbar.vue'
-import CiuRouterLink from './components/ciu-router-link.vue'
-import CiuScreenCenter from './components/ciu-screen-center.vue'
-import CiuSpinner from './components/ciu-spinner.vue'
-import CiuTextField from './components/ciu-text-field.vue'
+import CApiErrors from './components/api-errors.vue'
+import CApiForm from './components/api-form.vue'
+import CApiInput from './components/api-input.vue'
+import CButton from './components/button.vue'
+import CComponent from './components/component.vue'
+import CDropdown from './components/dropdown.vue'
+import CIcon from './components/icon.vue'
+import CInput from './components/input.vue'
+import CLoadingOverlay from './components/loading-overlay.vue'
+import CNavbar from './components/navbar.vue'
+import CRouterLink from './components/router-link.vue'
+import CScreenCenter from './components/screen-center.vue'
+import CSpinner from './components/spinner.vue'
+import CTextField from './components/text-field.vue'
 import { App } from 'vue';
 import { MediaQueryOptions } from './services/media-query'
 import { installResourceManager } from './services/resource-manager'
@@ -36,20 +36,20 @@ export default function install<T>(app: App<T>, options?: CkcOptions) {
     installBackend(app)
     installResourceManager(app)
     app
-      .component('CiuApiErrors', CiuApiErrors)
-      .component('CiuApiForm', CiuApiForm)
-      .component('CiuApiInput', CiuApiInput)
-      .component('CiuButton', CiuButton)
-      .component('CiuComponent', CiuComponent)
-      .component('CiuDropdown', CiuDropdown)
-      .component('CiuIcon', CiuIcon)
-      .component('CiuInput', CiuInput)
-      .component('CiuLoadingOverlay', CiuLoadingOverlay)
-      .component('CiuNavbar', CiuNavbar)
-      .component('CiuRouterLink', CiuRouterLink)
-      .component('CiuScreenCenter', CiuScreenCenter)
-      .component('CiuSpinner', CiuSpinner)
-      .component('CiuTextField', CiuTextField)
+      .component('CApiErrors', CApiErrors)
+      .component('CApiForm', CApiForm)
+      .component('CApiInput', CApiInput)
+      .component('CButton', CButton)
+      .component('CComponent', CComponent)
+      .component('CDropdown', CDropdown)
+      .component('CIcon', CIcon)
+      .component('CInput', CInput)
+      .component('CLoadingOverlay', CLoadingOverlay)
+      .component('CNavbar', CNavbar)
+      .component('CRouterLink', CRouterLink)
+      .component('CScreenCenter', CScreenCenter)
+      .component('CSpinner', CSpinner)
+      .component('CTextField', CTextField)
 
     app.config.globalProperties.$mq = mediaQuery(options?.mqOptions)
 }

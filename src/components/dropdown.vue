@@ -1,5 +1,5 @@
 <template lang="pug">
-div(class="ciu-dropdown")
+div(class="dropdown")
   header
     a(href="#" @click="toggle()")
       slot(name="header")
@@ -27,20 +27,20 @@ export default defineComponent({
 </script>
 
 <style>
-.ciu-dropdown > header {
+.dropdown > header {
   position: relative;
 }
 
-.ciu-dropdown > header {
+.dropdown > header {
   vertical-align: middle;
 }
 
-.ciu-dropdown > div {
-  background: var(--ciu-primary);
-  border-bottom-left-radius: var(--ciu-border-radius);
-  border-bottom-right-radius: var(--ciu-border-radius);
-  border-top: 1px solid var(--ciu-on-primary);
-  padding: var(--ciu-spacing);
+.dropdown > div {
+  background: var(--primary);
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  border-top: 1px solid var(--on-primary);
+  padding: var(--spacing);
   position: absolute;
   right: 0px;
 }

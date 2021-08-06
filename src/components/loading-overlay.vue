@@ -19,27 +19,27 @@ export default defineComponent({
 </script>
 
 <style>
-.ciu-loading-overlay {
+.loading-overlay {
   display: grid;
 }
 
-.ciu-loading-overlay > * {
+.loading-overlay > * {
   grid-area: 1 / 1
 }
 
-.ciu-loading-overlay #background, #spinner {
+.loading-overlay #background, #spinner {
   opacity: 0;
-  transition: opacity var(--ciu-transition-duration) ease var(--ciu-transition-duration);
+  transition: opacity var(--transition-duration) ease var(--transition-duration);
   z-index: -1;
 }
 
-.ciu-loading-overlay.ciu-loading #background {
-  background: var(--ciu-surface);
+.loading-overlay.loading #background {
+  background: var(--surface);
   opacity: 0.5;
   z-index: 1;
 }
 
-.ciu-loading-overlay.ciu-loading #spinner {
+.loading-overlay.loading #spinner {
   opacity: 1;
   z-index: 1;
 }

@@ -1,12 +1,12 @@
 <template lang="pug">
-div(class="ciu-text-field")
+div(class="text-field")
   input(
     placeholder=" "
     :type="password ? 'password' : 'text'"
     :value="modelValue"
     @input="valueChanged($event)"
   )
-  div(class='ciu-text-field-placeholder')
+  div(class="text-field-placeholder")
     div {{placeholder}}
 
 </template>
@@ -36,33 +36,33 @@ export default defineComponent({
 </script>
 
 <style>
-.ciu-text-field {
+.text-field {
   display: grid;
-  padding-top: calc(var(--ciu-font-size) * 0.8);
+  padding-top: calc(var(--font-size) * 0.8);
 }
 
-.ciu-text-field > input {
+.text-field > input {
   color: inherit;
 }
 
-.ciu-text-field > input {
+.text-field > input {
   background: transparent;
-  border-bottom: 1px var(--ciu-primary-dark) solid;
+  border-bottom: 1px var(--primary-dark) solid;
   border-left: none;
   border-right: none;
   border-top: none;
-  font: var(--ciu-font);
+  font: var(--font);
   grid-area: 1 / 1;
   transition: border-bottom 0.2s;
 }
 
-.ciu-text-field > input:focus {
+.text-field > input:focus {
   outline: none;
-  border-bottom: 1px var(--ciu-primary-light) solid;
+  border-bottom: 1px var(--primary-light) solid;
 }
 
-.ciu-text-field-placeholder {
-  color: var(--ciu-hint-on-surface);
+.text-field-placeholder {
+  color: var(--hint-on-surface);
   opacity: 0.5;
   display: flex;
   font-size: 90%;
@@ -72,17 +72,17 @@ export default defineComponent({
   z-index: -1;
 }
 
-.ciu-text-field-placeholder > div {
+.text-field-placeholder > div {
   align-self: center;
 }
 
-.ciu-text-field > input:focus + .ciu-text-field-placeholder {
+.text-field > input:focus + .text-field-placeholder {
   font-size: 80%;
-  transform: translate(0px, calc(var(--ciu-font-size) * -1.1));
+  transform: translate(0px, calc(var(--font-size) * -1.1));
 }
 
-.ciu-text-field > input:not(:placeholder-shown) + .ciu-text-field-placeholder {
+.text-field > input:not(:placeholder-shown) + .text-field-placeholder {
   font-size: 80%;
-  transform: translate(0px, calc(var(--ciu-font-size) * -1.1));
+  transform: translate(0px, calc(var(--font-size) * -1.1));
 }
 </style>

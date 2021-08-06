@@ -1,7 +1,7 @@
 <template lang="pug">
-div(class="ciu-control ciu-input")
+div(class="control input")
   slot
-  div(class="ciu-input-errors")
+  div(class="input-errors")
     div(v-for="error in errors" :key="error") {{ error }}
 </template>
 
@@ -23,8 +23,8 @@ export default defineComponent({
 </script>
 
 <style>
-.ciu-input-errors {
-  color: var(--ciu-error);
+.input-errors {
+  color: var(--error);
   font-size: 80%;
   margin-top: 2px;
 }

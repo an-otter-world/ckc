@@ -1,6 +1,6 @@
 <template lang="pug">
-router-link(:to="to" class="ciu-router-link")
-  div(class="ciu-router-link ciu-flex-row")
+router-link(:to="to" class="router-link")
+  div(class="router-link flex-row")
     ciu-icon(:icon="icon")
     slot
 </template>
@@ -26,8 +26,8 @@ export default defineComponent({
 </script>
 
 <style>
-.ciu-router-link > svg {
-  margin-right: var(--ciu-spacing);
+.router-link > svg {
+  margin-right: var(--spacing);
 }
 </style>
 

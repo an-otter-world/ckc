@@ -5,6 +5,6 @@
   as published by Sam Hocevar. See the COPYING file for more details.
 */
 
-.ciu-control {
-  margin-bottom: var(--ciu-spacing);
+.control {
+  margin-bottom: var(--spacing);
 }

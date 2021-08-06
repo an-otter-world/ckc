@@ -1,11 +1,11 @@
 <template lang="pug">
-div(class="ciu-spinner")
+div(class="spinner")
 </template>
 
 <style>
-.ciu-spinner {
+.spinner {
   animation: ciu-spinner 1.2s linear infinite;
-  border-color: var(--ciu-primary) transparent var(--ciu-primary) transparent;
+  border-color: var(--primary) transparent var(--primary) transparent;
   border-radius: 50%;
   border-style: solid;
   border-width: 6px;

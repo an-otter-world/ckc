@@ -1,13 +1,13 @@
 <template lang="pug">
-div(class="ciu-navbar" v-bind:class="{'ciu-small': !$mq('sm'), 'ciu-primary': !secondary, 'ciu-secondary': secondary}")
-  div(class="ciu-brand")
+div(class="navbar" v-bind:class="{'small': !$mq('sm'), 'primary': !secondary, 'secondary': secondary}")
+  div(class="brand")
     slot(name="brand")
-  div(class="ciu-menu" ref="menu")
+  div(class="menu" ref="menu")
     a(href="#" v-on:click="toggle()")
       ciu-icon(icon="bars")
-    div(class="ciu-links" v-on:mouseup="close()" v-bind:class="{ 'ciu-opened': isOpened }")
+    div(class="links" v-on:mouseup="close()" v-bind:class="{ 'ciu-opened': isOpened }")
       slot
-  div(class="ciu-end")
+  div(class="end")
     slot(name="end")
 </template>
 
@@ -67,86 +67,86 @@ export default defineComponent({
 </script>
 
 <style>
-.ciu-navbar {
+.navbar {
   display: flex;
   align-items: stretch;
 }
 
-.ciu-navbar > div {
+.navbar > div {
   align-items: center;
   display: flex;
 }
 
-.ciu-navbar > .ciu-brand {
+.navbar > .brand {
   flex-grow: 0;
-  margin-left: var(--ciu-spacing);
-  margin-right: var(--ciu-spacing);
+  margin-left: var(--spacing);
+  margin-right: var(--spacing);
 }
 
-.ciu-navbar.ciu-small > .ciu-brand {
+.navbar.small > .brand {
   flex-grow: 1;
   order: 1;
 }
 
-.ciu-navbar > .ciu-menu {
+.navbar > .menu {
   display: flex;
   flex-grow: 1;
 }
 
-.ciu-navbar.ciu-small > .ciu-menu {
+.navbar.small > .menu {
   flex-direction: column;
   flex-grow: 0;
 }
 
-.ciu-navbar > .ciu-menu > a {
+.navbar > .menu > a {
   display: none;
 }
 
-.ciu-navbar.ciu-small > .ciu-menu > a {
+.navbar.small > .menu > a {
   display: inline;
 }
 
-.ciu-navbar > .ciu-menu > .ciu-links {
+.navbar > .menu > .links {
   display: flex;
 }
 
-.ciu-navbar.ciu-small > .ciu-menu > .ciu-links {
-  background: var(--ciu-context);
+.navbar.small > .menu > .links {
+  background: var(--context);
   flex-direction: column;
   left: 0;
   display: none;
-  padding: calc(0.5 * var(--ciu-spacing));
+  padding: calc(0.5 * var(--spacing));
   position: absolute;
   top: 3rem;
 }
 
-.ciu-navbar.ciu-small > .ciu-menu > .ciu-links.ciu-opened {
+.navbar.small > .menu > .links.opened {
   display: flex;
 }
 
-.ciu-navbar > .ciu-end {
+.navbar > .end {
   flex-grow: 0;
-  margin-left: var(--ciu-spacing);
-  margin-right: var(--ciu-spacing);
+  margin-left: var(--spacing);
+  margin-right: var(--spacing);
 }
 
-.ciu-navbar.ciu-small > .ciu-end {
+.navbar.small > .end {
   order: 2;
 }
 
-.ciu-navbar > .ciu-menu a {
+.navbar > .menu a {
   align-items: center;
-  padding: var(--ciu-spacing);
+  padding: var(--spacing);
   text-transform: uppercase;
 }
 
-.ciu-navbar > .ciu-menu a:hover {
-  background-color: var(--ciu-context-light);
+.navbar > .menu a:hover {
+  background-color: var(--context-light);
   text-decoration: none;
 }
 
-.ciu-navbar > .ciu-menu a.router-link-active {
-  background-color: var(--ciu-context-dark);
+.navbar > .menu a.router-link-active {
+  background-color: var(--context-dark);
   text-transform: uppercase;
 }
 </style>

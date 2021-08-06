@@ -5,12 +5,12 @@
   as published by Sam Hocevar. See the COPYING file for more details.
 */
 
-.ciu-flex-column {
+.flex-column {
     display:flex;
     flex-direction: column;
 }
 
-.ciu-flex-row {
+.flex-row {
     display:flex;
     flex-direction: row;
 }

@@ -6,27 +6,27 @@
 */
 
 :root {
-  --ciu-muted-on-surface: rgba(var(--ciu-on-surface), 0.6);
-  --ciu-hint-on-surface: rgba(var(--ciu-on-surface), 0.1);
+  --muted-on-surface: rgba(var(--on-surface), 0.6);
+  --hint-on-surface: rgba(var(--on-surface), 0.1);
 
-  --ciu-muted-on-background: rgba(var(--ciu-on-surface), 0.6);
-  --ciu-hint-on-background: rgba(var(--ciu-on-surface), 0.4);
+  --muted-on-background: rgba(var(--on-surface), 0.6);
+  --hint-on-background: rgba(var(--on-surface), 0.4);
 
-  --ciu-border-color: rgba(var(--ciu-on-surface), 0.8);
+  --border-color: rgba(var(--on-surface), 0.8);
 }
 
-.ciu-primary {
-  --ciu-context-dark: var(--ciu-primary-dark);
-  --ciu-context-light: var(--ciu-primary-light);
-  --ciu-context: var(--ciu-primary);
-  background-color: var(--ciu-primary);
-  color: var(--ciu-on-primary);
+.primary {
+  --context-dark: var(--primary-dark);
+  --context-light: var(--primary-light);
+  --context: var(--primary);
+  background-color: var(--primary);
+  color: var(--on-primary);
 }
 
-.ciu-secondary {
-  --ciu-context-dark: var(--ciu-secondary-dark);
-  --ciu-context-light: var(--ciu-secondary-light);
-  --ciu-context: var(--ciu-secondary);
-  background-color: var(--ciu-secondary);
-  color: var(--ciu-on-secondary);
+.secondary {
+  --context-dark: var(--secondary-dark);
+  --context-light: var(--secondary-light);
+  --context: var(--secondary);
+  background-color: var(--secondary);
+  color: var(--on-secondary);
 }

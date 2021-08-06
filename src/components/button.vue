@@ -1,5 +1,5 @@
 <template lang="pug">
-button(class="ciu-control ciu-ripple" :type="type")
+button(class="control ciu-ripple" :type="type")
   slot
 </template>
 

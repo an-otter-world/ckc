@@ -1,6 +1,6 @@
 <template lang="pug">
 //- This components injects a resource for child components (inputs, error feedback, loading feedback...) to access it.
-div(class="ciu-control ciu-resource-errors" v-if="error") {{ error }}
+div(class="control ciu-resource-errors" v-if="error") {{ error }}
 </template>
 
 <script lang="ts">
@@ -22,8 +22,8 @@ export default defineComponent({
 </script>
 
 <style>
-.ciu-resource-errors {
+.resource-errors {
     font-size: 80%;
-    color: var(--ciu-error);
+    color: var(--error);
 }
 </style>

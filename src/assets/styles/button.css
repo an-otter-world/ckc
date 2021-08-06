@@ -6,16 +6,16 @@
 */
 
 button {
-  background: var(--ciu-primary);
-  color: var(--ciu-on-primary);
-  border-radius: var(--ciu-border-radius);
-  border: 1px var(--ciu-primary) solid;
+  background: var(--primary);
+  color: var(--on-primary);
+  border-radius: var(--border-radius);
+  border: 1px var(--primary) solid;
   border: none;
-  box-shadow: var(--ciu-box-shadow-small);
+  box-shadow: var(--box-shadow-small);
   cursor: pointer;
-  margin-left: var(--ciu-box-shadow-small-margin);
-  margin-right: var(--ciu-box-shadow-small-margin);
-  padding: var(--ciu-spacing);
+  margin-left: var(--box-shadow-small-margin);
+  margin-right: var(--box-shadow-small-margin);
+  padding: var(--spacing);
 }
 
 button:focus {
@@ -24,5 +24,5 @@ button:focus {
 }
 
 button:hover {
-  background: var(--ciu-primary-dark);
+  background: var(--primary-dark);
 }
