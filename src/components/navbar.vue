@@ -5,14 +5,13 @@ div(class="navbar" v-bind:class="{'small': !$mq('sm'), 'primary': !secondary, 's
   div(class="menu" ref="menu")
     a(href="#" v-on:click="toggle()")
       c-icon(icon="bars")
-    div(class="links" v-on:mouseup="close()" v-bind:class="{ 'ciu-opened': isOpened }")
+    div(class="links" v-on:mouseup="close()" v-bind:class="{ 'opened': isOpened }")
       slot
   div(class="end")
     slot(name="end")
 </template>
 
 <script lang="ts">
-
 import { defineComponent } from 'vue'
 import { ref } from 'vue'
 import { toRefs } from 'vue'
@@ -31,12 +30,12 @@ export default defineComponent({
     const menu = ref<Node | null>(null)
 
     function open() {
-      html.addEventListener('click', onBodyClick);
+      html.addEventListener('click', onBodyClick)
       isOpened.value = true
     }
 
     function close() {
-      html.removeEventListener('click', onBodyClick);
+      html.removeEventListener('click', onBodyClick)
       isOpened.value = false
     }
 
