@@ -5,7 +5,7 @@ div(class="navbar" v-bind:class="{'small': !$mq('sm'), 'primary': !secondary, 's
   div(class="menu" ref="menu")
     a(href="#" v-on:click="toggle()")
       c-icon(icon="bars")
-    div(class="links" v-on:mouseup="close()" v-bind:class="{ 'opened': isOpened }")
+    div(class="links" v-on:mouseup="close()" v-bind:class="{ 'opened': isOpen }")
       slot
   div(class="end")
     slot(name="end")
@@ -25,22 +25,22 @@ export default defineComponent({
   },
   setup(props) {
     const {secondary} = toRefs(props)
-    const isOpened = ref(false);
+    const isOpen = ref(false);
     const html = document.documentElement
     const menu = ref<Node | null>(null)
 
     function open() {
       html.addEventListener('click', onBodyClick)
-      isOpened.value = true
+      isOpen.value = true
     }
 
     function close() {
       html.removeEventListener('click', onBodyClick)
-      isOpened.value = false
+      isOpen.value = false
     }
 
     function toggle() {
-      if(!isOpened.value) {
+      if(!isOpen.value) {
         open()
       }
       else {
@@ -56,7 +56,7 @@ export default defineComponent({
 
     return {
       close,
-      isOpened,
+      isOpen,
       menu,
       secondary,
       toggle,
