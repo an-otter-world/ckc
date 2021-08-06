@@ -1,9 +1,9 @@
 <template lang="pug">
 //- This components injects a resource for child components (inputs, error feedback, loading feedback...) to access it.
-div(v-bind:class="{'ciu-loading-overlay': true, 'ciu-loading': loading}")
+div(v-bind:class="{'loading-overlay': true, 'loading': loading}")
   div(id='background')
-  ciu-screen-center
-    ciu-spinner(id='spinner')
+  c-screen-center
+    c-spinner(id='spinner')
   div
     slot
 </template>
