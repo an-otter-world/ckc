@@ -36,10 +36,10 @@ export default defineComponent({
 }
 
 .dropdown > div {
-  background: var(--primary);
+  background: var(--context);
   border-bottom-left-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
-  border-top: 1px solid var(--on-primary);
+  border-top: 1px solid var(--on-context);
   padding: var(--spacing);
   position: absolute;
   right: 0px;
