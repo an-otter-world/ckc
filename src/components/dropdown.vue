@@ -3,7 +3,7 @@ div(class="dropdown")
   header
     a(href="#" @click="toggle()")
       slot(name="header")
-        ciu-icon(icon="chevron-down")
+        c-icon(icon="chevron-down")
   div(v-if="isOpen" @click="isOpen = false")
     slot
 </template>

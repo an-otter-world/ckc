@@ -4,7 +4,7 @@ div(class="navbar" v-bind:class="{'small': !$mq('sm'), 'primary': !secondary, 's
     slot(name="brand")
   div(class="menu" ref="menu")
     a(href="#" v-on:click="toggle()")
-      ciu-icon(icon="bars")
+      c-icon(icon="bars")
     div(class="links" v-on:mouseup="close()" v-bind:class="{ 'ciu-opened': isOpened }")
       slot
   div(class="end")
