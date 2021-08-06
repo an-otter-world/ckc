@@ -1,10 +1,10 @@
 <template lang="pug">
-div(class="dropdown")
+div(class="dropdown" ref="dropdown")
   header
     a(href="#" @click="toggle()")
       slot(name="header")
         c-icon(icon="chevron-down")
-  div(v-if="isOpen" @click="isOpen = false")
+  div(v-if="isOpen" v-on:mouseup="close()")
     slot
 </template>
 
@@ -14,13 +14,40 @@ import { ref } from 'vue'
 
 export default defineComponent({
   setup() {
-    let isOpen = ref(false);
-    let toggle = () => {
-      isOpen.value = !isOpen.value;
+    const isOpen = ref(false);
+    const html = document.documentElement
+    const dropdown = ref<Node | null>(null)
+
+    function open() {
+      html.addEventListener('click', onBodyClick)
+      isOpen.value = true
     }
+
+    function close() {
+      html.removeEventListener('click', onBodyClick)
+      isOpen.value = false
+    }
+
+    function toggle() {
+      if(!isOpen.value) {
+        open()
+      }
+      else {
+        close()
+      }
+    }
+
+    function onBodyClick(e: Event) {
+      if(!dropdown.value!.contains(e.target as Node)) {
+        close()
+      }
+    }
+
     return {
+      close,
+      dropdown,
       isOpen,
-      toggle
+      toggle,
     }
   },
 })
