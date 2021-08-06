@@ -63,9 +63,9 @@ export abstract class Resource {
     }
   }
 
-  private _fieldsErrors: Record<string, string[]> = {}
-  private _error: string | undefined
-  private _url: string
   private _backend: Backend
+  private _error: string | undefined
+  private _fieldsErrors: Record<string, string[]> = {}
   private _loading: boolean = false;
+  private _url: string
 }
