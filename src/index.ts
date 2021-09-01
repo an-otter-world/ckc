@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import { App } from 'vue';
 
-import './assets/styles/_index.css'
+import './assets/styles/_index.scss'
 import './font-awesome'
 import './ckc.d.ts'
 import CApiErrors from './components/api-errors.vue'
@@ -10,7 +10,9 @@ import CApiInput from './components/api-input.vue'
 import CButton from './components/button.vue'
 import CComponent from './components/component.vue'
 import CDropdown from './components/dropdown.vue'
+import CGroupbox from './components/groupbox.vue'
 import CIcon from './components/icon.vue'
+import CListbox from './components/listbox.vue'
 import CInput from './components/input.vue'
 import CLoadingOverlay from './components/loading-overlay.vue'
 import CNavbar from './components/navbar.vue'
@@ -41,8 +43,10 @@ export default function install<T>(app: App<T>, options?: CkcOptions) {
       .component('CButton', CButton)
       .component('CComponent', CComponent)
       .component('CDropdown', CDropdown)
+      .component('CGroupbox', CGroupbox)
       .component('CIcon', CIcon)
       .component('CInput', CInput)
+      .component('CListbox', CListbox)
       .component('CLoadingOverlay', CLoadingOverlay)
       .component('CNavbar', CNavbar)
       .component('CRouterLink', CRouterLink)

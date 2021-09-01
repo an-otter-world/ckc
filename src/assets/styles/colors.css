@@ -13,6 +13,11 @@
   --hint-on-background: rgba(var(--on-surface), 0.4);
 
   --border-color: rgba(var(--on-surface), 0.8);
+
+  --context-dark: var(--primary-dark);
+  --context-light: var(--primary-light);
+  --context: var(--background);
+  --on-context: var(--on-background);
 }
 
 .primary {
