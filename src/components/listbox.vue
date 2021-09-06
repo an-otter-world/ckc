@@ -12,46 +12,44 @@ div(class="listbox")
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
-import { ref } from "vue";
+import { defineComponent, PropType } from 'vue'
+import { ref } from 'vue'
 
 export default defineComponent({
   props: {
     items: Object as PropType<Object>,
-    selectionDisabled: Boolean
+    selectionDisabled: Boolean,
   },
-  emits: [
-    'update:selectedItem'
-  ],
-  setup({selectionDisabled}, { emit }) {
+  emits: ['update:selectedItem'],
+  setup({ selectionDisabled }, { emit }) {
     let selectedItem = ref(undefined)
     let selectedItemElement: HTMLElement | undefined = undefined
-    let selectItem = function(element: HTMLElement, item : any) {
-      if(selectionDisabled) {
+    let selectItem = function (element: HTMLElement, item: any) {
+      if (selectionDisabled) {
         return
       }
 
-      if(selectedItemElement) {
+      if (selectedItemElement) {
         selectedItemElement.classList.remove('primary')
       }
 
-      if(selectedItem) {
+      if (selectedItem) {
         selectedItem.value = item
         emit('update:selectedItem', item)
       }
 
       selectedItemElement = element
-      if(element) {
+      if (element) {
         element.classList.add('primary')
       }
-    } 
-    
+    }
+
     return {
       selectItem,
-      selectedItem
+      selectedItem,
     }
-  }
-});
+  },
+})
 </script>
 
 <style lang="scss">
@@ -61,6 +59,7 @@ export default defineComponent({
 
   .overflow-container {
     flex: 1 1 1px;
+    max-height: 100vh;
     overflow: auto;
   }
 }
@@ -71,9 +70,8 @@ export default defineComponent({
   border-style: solid;
   border-width: 1px;
   cursor: pointer;
-  margin: calc(.2*var(--spacing));
-  padding: calc(.2*var(--spacing));
+  margin: calc(0.2 * var(--spacing));
+  padding: calc(0.2 * var(--spacing));
   user-select: none;
 }
 </style>
-
