@@ -73,5 +73,9 @@ export default defineComponent({
   margin: calc(0.2 * var(--spacing));
   padding: calc(0.2 * var(--spacing));
   user-select: none;
+
+  &:nth-child(2n):not(.primary) {
+    background-color: rgba(black, 0.2);
+  }
 }
 </style>
