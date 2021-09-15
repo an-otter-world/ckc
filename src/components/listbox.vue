@@ -1,14 +1,13 @@
 <template lang="pug">
 div(class="listbox")
-  div(class="overflow-container")
-    div(class="flex-column")
-      div(
-          v-for="item in items"
-          :key="item.id"
-          class="listbox-item"
-          @click="selectItem($event.target, item)"
-      )
-        slot(name="item" v-bind:item="item")
+  div(class="flex-column")
+    div(
+        v-for="item in items"
+        :key="item.id"
+        class="listbox-item"
+        @click="selectItem($event.target, item)"
+    )
+      slot(name="item" v-bind:item="item")
 </template>
 
 <script lang="ts">
@@ -54,28 +53,23 @@ export default defineComponent({
 
 <style lang="scss">
 .listbox {
+  display: flex;
   margin: var(--spacing);
-  flex: 1 1 1px;
+  overflow: auto;
+  height: calc(100% - 4rem);
 
-  .overflow-container {
-    flex: 1 1 1px;
-    max-height: 100vh;
-    overflow: auto;
-  }
-}
+  .listbox-item {
+    user-select: none;
+    border-color: var(--context-color);
+    border-radius: var(--border-radius);
+    border: 1px solid;
+    cursor: pointer;
+    margin: calc(0.2 * var(--spacing));
+    padding: calc(0.2 * var(--spacing));
 
-.listbox-item {
-  border-color: var(--context-color);
-  border-radius: var(--border-radius);
-  border-style: solid;
-  border-width: 1px;
-  cursor: pointer;
-  margin: calc(0.2 * var(--spacing));
-  padding: calc(0.2 * var(--spacing));
-  user-select: none;
-
-  &:nth-child(2n):not(.primary) {
-    background-color: rgba(black, 0.2);
+    &:nth-child(2n):not(.primary) {
+      background-color: rgba(black, 0.2);
+    }
   }
 }
 </style>

@@ -1,7 +1,6 @@
 <template lang="pug">
 div(class="component")
-  div(class="component-background")
-  div
+  div(class='component-background')
     slot
 </template>
 
@@ -9,8 +8,7 @@ div(class="component")
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-    setup() {
-    },
+  setup() {},
 })
 </script>
 
@@ -30,7 +28,6 @@ export default defineComponent({
 
 .component > .component-background {
   background-color: var(--surface);
-  z-index: -2;
 }
 
 .component > header {
