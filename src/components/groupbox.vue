@@ -9,11 +9,10 @@ div(class="groupbox")
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-    props: {
-        label: String
-    },
-    setup() {
-    },
+  props: {
+    label: String,
+  },
+  setup() {},
 })
 </script>
 
@@ -27,10 +26,9 @@ export default defineComponent({
   position: relative;
 
   header {
-    background: var(--context);
-    padding-left: var(--spacing);
-    padding-right: var(--spacing);
-    padding-top: 0;
+    background: var(--secondary-light);
+    border-radius: 5px;
+    padding: 0 calc(var(--spacing) * 0.5);
     position: absolute;
     top: -0.9rem;
     left: 1rem;
