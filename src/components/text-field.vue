@@ -1,13 +1,11 @@
 <template lang="pug">
 div(class="text-field")
   input(
-    placeholder=" "
+    :placeholder="placeholder"
     :type="password ? 'password' : 'text'"
     :value="modelValue"
     @input="valueChanged($event)"
   )
-  div(class="text-field-placeholder")
-    div {{placeholder}}
 
 </template>
 
@@ -15,27 +13,25 @@ div(class="text-field")
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-    props: {
-      'placeholder': String,
-      'modelValue': String,
-      'password': Boolean
-    },
-    emits: [
-        'update:modelValue',
-    ],
-    setup(_, {emit}) {
-      function valueChanged(event: Event) {
-        const input = event.target as HTMLInputElement
-        emit('update:modelValue', input.value)
-      }
-      return {
-          valueChanged
-      }
-    },
+  props: {
+    placeholder: String,
+    modelValue: String,
+    password: Boolean,
+  },
+  emits: ['update:modelValue'],
+  setup(_, { emit }) {
+    function valueChanged(event: Event) {
+      const input = event.target as HTMLInputElement
+      emit('update:modelValue', input.value)
+    }
+    return {
+      valueChanged,
+    }
+  },
 })
 </script>
 
-<style>
+<style lang="scss">
 .text-field {
   display: grid;
   padding-top: calc(var(--font-size) * 0.8);

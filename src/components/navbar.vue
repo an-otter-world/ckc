@@ -18,14 +18,14 @@ import { toRefs } from 'vue'
 
 export default defineComponent({
   props: {
-    'secondary': {
+    secondary: {
       type: Boolean,
       required: false,
-    }
+    },
   },
   setup(props) {
-    const {secondary} = toRefs(props)
-    const isOpen = ref(false);
+    const { secondary } = toRefs(props)
+    const isOpen = ref(false)
     const html = document.documentElement
     const menu = ref<Node | null>(null)
 
@@ -40,16 +40,15 @@ export default defineComponent({
     }
 
     function toggle() {
-      if(!isOpen.value) {
+      if (!isOpen.value) {
         open()
-      }
-      else {
+      } else {
         close()
       }
     }
 
     function onBodyClick(e: Event) {
-      if(!menu.value!.contains(e.target as Node)) {
+      if (!menu.value!.contains(e.target as Node)) {
         close()
       }
     }
@@ -69,6 +68,7 @@ export default defineComponent({
 .navbar {
   display: flex;
   align-items: stretch;
+  z-index: 10;
 }
 
 .navbar > div {

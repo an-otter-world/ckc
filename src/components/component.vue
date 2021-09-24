@@ -12,7 +12,8 @@ export default defineComponent({
 })
 </script>
 
-<style>
+<style lang="scss">
+@import 'include-media';
 .component {
   color: var(--on-surface);
   display: grid;
@@ -43,5 +44,11 @@ export default defineComponent({
   margin-bottom: var(--spacing);
   margin-top: var(--spacing);
   width: 80%;
+}
+
+@include media('<500px') {
+  .component {
+    margin: var(--spacing) 0;
+  }
 }
 </style>

@@ -1,13 +1,12 @@
 <template lang="pug">
-div(class="listbox")
-  div(class="flex-column")
-    div(
+div(class="listbox flex-column")
+  div(
         v-for="item in items"
         :key="item.id"
         class="listbox-item"
         @click="selectItem($event.target, item)"
     )
-      slot(name="item" v-bind:item="item")
+    slot(name="item" v-bind:item="item")
 </template>
 
 <script lang="ts">
@@ -53,11 +52,9 @@ export default defineComponent({
 
 <style lang="scss">
 .listbox {
-  display: flex;
   margin: var(--spacing);
   overflow: auto;
   height: calc(100% - 4rem);
-
   .listbox-item {
     user-select: none;
     border-color: var(--context-color);
