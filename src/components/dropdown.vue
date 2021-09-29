@@ -17,7 +17,7 @@ import { ref } from 'vue'
 
 export default defineComponent({
   setup() {
-    const isOpen = ref(false);
+    const isOpen = ref(false)
     const html = document.documentElement
     const dropdown = ref<Node | null>(null)
 
@@ -32,16 +32,15 @@ export default defineComponent({
     }
 
     function toggle() {
-      if(!isOpen.value) {
+      if (!isOpen.value) {
         open()
-      }
-      else {
+      } else {
         close()
       }
     }
 
     function onBodyClick(e: Event) {
-      if(!dropdown.value!.contains(e.target as Node)) {
+      if (!!dropdown && !dropdown.value!.contains(e.target as Node)) {
         close()
       }
     }
