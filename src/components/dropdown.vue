@@ -40,7 +40,7 @@ export default defineComponent({
     }
 
     function onBodyClick(e: Event) {
-      if (!!dropdown && !dropdown.value!.contains(e.target as Node)) {
+      if (!!dropdown.value && !dropdown.value!.contains(e.target as Node)) {
         close()
       }
     }
