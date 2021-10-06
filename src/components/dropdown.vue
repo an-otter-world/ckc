@@ -55,22 +55,22 @@ export default defineComponent({
 })
 </script>
 
-<style>
+<style lang="scss">
 .dropdown > header {
   position: relative;
-}
 
-.dropdown > header {
-  vertical-align: middle;
-}
+  > header {
+    vertical-align: middle;
+  }
 
-.dropdown > div {
-  background: var(--context);
-  border-bottom-left-radius: var(--border-radius);
-  border-bottom-right-radius: var(--border-radius);
-  border-top: 1px solid var(--on-context);
-  padding: var(--spacing);
-  position: absolute;
-  right: 0px;
+  > div {
+    background: var(--context);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    border-top: 1px solid var(--on-context);
+    padding: var(--spacing);
+    position: absolute;
+    right: 0px;
+  }
 }
 </style>
