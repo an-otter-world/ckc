@@ -1,5 +1,5 @@
 <template lang="pug">
-div(class="component")
+div(class="component surface")
   div(class='component-background')
     slot
 </template>
@@ -16,7 +16,7 @@ export default defineComponent({
 @import 'include-media';
 
 .component {
-  color: var(--on-surface);
+  color: var(--on-context);
   display: grid;
   margin: var(--spacing);
 
@@ -28,7 +28,7 @@ export default defineComponent({
   }
 
   > .component-background {
-    background-color: var(--surface);
+    background-color: var(--context);
   }
 
   > header {
@@ -37,7 +37,7 @@ export default defineComponent({
   }
 
   > hr {
-    border-bottom: 1px var(--on-surface) solid;
+    border-bottom: 1px var(--on-context) solid;
     border-left: none;
     border-right: none;
     border-top: none;
