@@ -24,12 +24,9 @@ class ServiceManager {
 
 const ServiceManagerKey : InjectionKey<ServiceManager> = 'ServiceManager' as any as InjectionKey<ServiceManager>
 
-// HACK to workaround injection bug when running in production
-const ServiceManagerInstance = new ServiceManager()
 
 export function getService<TService extends Object>(key: InjectionKey<TService>, constructor: ServiceConstructor<TService>) {
-  // HACK to workaround injection bug when running in production
-  const manager = ServiceManagerInstance
+  const manager = inject(ServiceManagerKey)
   if(!manager) {
     throw new Error("No service manager available, please install it in Vue JS application through the service-manager.ts/install method")
   }
@@ -38,5 +35,5 @@ export function getService<TService extends Object>(key: InjectionKey<TService>,
 }
 
 export function installServiceManager<T>(app: App<T>) {
-  app.provide(ServiceManagerKey, ServiceManagerInstance)
+  app.provide(ServiceManagerKey, new ServiceManager())
 }
