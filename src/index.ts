@@ -35,26 +35,27 @@ export interface CkcOptions {
 }
 
 export default function install<T>(app: App<T>, options?: CkcOptions) {
-    installServiceManager(app)
-    app
-      .component('CApiErrors', CApiErrors)
-      .component('CApiForm', CApiForm)
-      .component('CApiInput', CApiInput)
-      .component('CButton', CButton)
-      .component('CComponent', CComponent)
-      .component('CDropdown', CDropdown)
-      .component('CGroupbox', CGroupbox)
-      .component('CIcon', CIcon)
-      .component('CInput', CInput)
-      .component('CListbox', CListbox)
-      .component('CLoadingOverlay', CLoadingOverlay)
-      .component('CNavbar', CNavbar)
-      .component('CRouterLink', CRouterLink)
-      .component('CScreenCenter', CScreenCenter)
-      .component('CSpinner', CSpinner)
-      .component('CTextField', CTextField)
+  console.log('Loading CKC...')
+  installServiceManager(app)
+  app
+    .component('CApiErrors', CApiErrors)
+    .component('CApiForm', CApiForm)
+    .component('CApiInput', CApiInput)
+    .component('CButton', CButton)
+    .component('CComponent', CComponent)
+    .component('CDropdown', CDropdown)
+    .component('CGroupbox', CGroupbox)
+    .component('CIcon', CIcon)
+    .component('CInput', CInput)
+    .component('CListbox', CListbox)
+    .component('CLoadingOverlay', CLoadingOverlay)
+    .component('CNavbar', CNavbar)
+    .component('CRouterLink', CRouterLink)
+    .component('CScreenCenter', CScreenCenter)
+    .component('CSpinner', CSpinner)
+    .component('CTextField', CTextField)
 
-    app.config.globalProperties.$mq = mediaQuery(options?.mqOptions)
+  app.config.globalProperties.$mq = mediaQuery(options?.mqOptions)
 }
 
 export { Backend } from './services/backend'
