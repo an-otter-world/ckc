@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { App } from 'vue';
+import { App } from 'vue'
 
 import './assets/styles/_index.scss'
 import './font-awesome'
@@ -10,6 +10,7 @@ import CApiInput from './components/api-input.vue'
 import CButton from './components/button.vue'
 import CComponent from './components/component.vue'
 import CDropdown from './components/dropdown.vue'
+import CDropdownMultiple from './components/dropdown-multiple.vue'
 import CGroupbox from './components/groupbox.vue'
 import CIcon from './components/icon.vue'
 import CListbox from './components/listbox.vue'
@@ -35,7 +36,6 @@ export interface CkcOptions {
 }
 
 export default function install<T>(app: App<T>, options?: CkcOptions) {
-  console.log('Loading CKC...')
   installServiceManager(app)
   app
     .component('CApiErrors', CApiErrors)
@@ -44,6 +44,7 @@ export default function install<T>(app: App<T>, options?: CkcOptions) {
     .component('CButton', CButton)
     .component('CComponent', CComponent)
     .component('CDropdown', CDropdown)
+    .component('CDropdownMultiple', CDropdownMultiple)
     .component('CGroupbox', CGroupbox)
     .component('CIcon', CIcon)
     .component('CInput', CInput)
