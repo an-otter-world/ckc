@@ -10,17 +10,17 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   props: {
-    to: {
+    'to': {
       type: String,
       required: true,
     },
-    icon: {
+    'icon': {
       type: String,
-      required: false,
-    },
+      required: true,
+    }
   },
   setup({ to, icon }) {
-    return { to, icon }
+    return { to, icon } 
   },
 })
 </script>
@@ -32,3 +32,4 @@ export default defineComponent({
   }
 }
 </style>
+
