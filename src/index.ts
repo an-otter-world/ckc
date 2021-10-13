@@ -22,7 +22,6 @@ import CScreenCenter from './components/screen-center.vue'
 import CSpinner from './components/spinner.vue'
 import CTextField from './components/text-field.vue'
 import { MediaQueryOptions } from './services/media-query'
-import { installServiceManager } from './services/service-manager'
 import { mediaQuery } from './services/media-query'
 
 declare module '@vue/runtime-core' {
@@ -36,7 +35,6 @@ export interface CkcOptions {
 }
 
 export default function install<T>(app: App<T>, options?: CkcOptions) {
-  installServiceManager(app)
   app
     .component('CApiErrors', CApiErrors)
     .component('CApiForm', CApiForm)
