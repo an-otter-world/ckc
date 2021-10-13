@@ -4,7 +4,7 @@ div(class="dropdown" ref="dropdown")
     a(href="#" @click="toggle()")
       slot(name="header")
         c-icon(icon="chevron-down")
-  div(v-if="isOpen" @mouseup="close()")
+  div( v-if="isOpen"  @mouseup="close()")
     slot
 </template>
 
@@ -55,22 +55,22 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
-.dropdown > header {
+<style scoped lang="scss">
+.dropdown {
   position: relative;
 
-  > header {
+  & > header {
     vertical-align: middle;
   }
 
-  > div {
+  & > div {
     background: var(--context);
     border-bottom-left-radius: var(--border-radius);
     border-bottom-right-radius: var(--border-radius);
     border-top: 1px solid var(--on-context);
     padding: var(--spacing);
     position: absolute;
-    right: 0px;
+    right: 0;
   }
 }
 </style>
